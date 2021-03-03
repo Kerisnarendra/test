@@ -40,9 +40,10 @@
 ## Requirement
 Convert json above to html table like below:
 
-MEETING_WEBINAR_ID  INSTANCE_ID             INTERACTION_TYPE  AUDIO_MOS_AVERAGE  HOST_ID                 HOST          ASSISTANT_ID  TOPIC      STATUS  START_TIME           END_TIME             DURATION
-7257765871          i/MRfbrtYEaIkgW6A7WBsg  0                 3.347712453        Fx18lPlkSyUmxBGCyv3cbQ  Kerisnarendra               Review     past
-87466388581         x/MurVOlQPCBmhOcF3JvdQ  0                 3.347712453        1jFcjdYmTw2W9RR4A2JwbQ  John                        Interview  past    2021-03-02T13:30:03  2021-03-02T14:57:27  5244000
+|MEETING_WEBINAR_ID|INSTANCE_ID|INTERACTION_TYPE|AUDIO_MOS_AVERAGE|HOST_ID|HOST|ASSISTANT_ID|TOPIC|STATUS|START_TIME|END_TIME|DURATION
+|--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |
+|7257765871|i/MRfbrtYEaIkgW6A7WBsg|0|3.347712453|Fx18lPlkSyUmxBGCyv3cbQ|Kerisnarendra|Review|past
+|87466388581|x/MurVOlQPCBmhOcF3JvdQ|0|3.347712453|1jFcjdYmTw2W9RR4A2JwbQ|John|Interview|past|2021-03-02T13:30:03|2021-03-02T14:57:27|5244000
 
 
 
