@@ -38,7 +38,7 @@
 ```
 
 ## Requirement
-Convert json above to html table like below:
+Create an API to convert json above to html table like below:
 
 | MEETING_WEBINAR_ID | INSTANCE_ID            | INTERACTION_TYPE | AUDIO_MOS_AVERAGE | HOST_ID                | HOST          | ASSISTANT_ID | TOPIC     | STATUS | START_TIME          | END_TIME            | DURATION |
 |--------------------|------------------------|------------------|-------------------|------------------------|---------------|--------------|-----------|--------|---------------------|---------------------|----------|
