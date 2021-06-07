@@ -1,17 +1,17 @@
 
-const tag = function(name) {
+const Tag = function(name) {
     this.name = name;
     this.contents = [];
 };
 
-tag.prototype.display = function() {
+Tag.prototype.display = function() {
     let html = '<' + this.name + '>';
     //contents tag here
     for (let content of this.contents) {
-        if (typeof(content) === 'string') {
-            html += content;
-        } else {
+        if (content instanceof Tag) {
             html += content.display();
+        } else {
+            html += content;
         }
     }
     html += ('</' + this.name + '>');
@@ -31,11 +31,11 @@ json2html = function (array) {
     }, []);
     //we try to get all necessary headers first
 
-    let tableHTML = new tag('table');
-    let headerHTML = new tag('thead');
-    let headerRowHTML = new tag('tr');
+    let tableHTML = new Tag('table');
+    let headerHTML = new Tag('thead');
+    let headerRowHTML = new Tag('tr');
     for (let header of headers) {
-        let thHTML = new tag('th');
+        let thHTML = new Tag('th');
         thHTML.contents.push(header);
         headerRowHTML.contents.push(thHTML);
     }
@@ -44,14 +44,18 @@ json2html = function (array) {
     tableHTML.contents.push(headerHTML);
 
     //now we try to display the contents
-    let bodyHTML = new tag('tbody');
+    let bodyHTML = new Tag('tbody');
 
     for (let row of array) {
-        let rowHTML = new tag('tr');
-        for (let key in row) {
-            let thHTML = new tag('th');
-            thHTML.contents.push(header);
-            headerRowHTML.contents.push(thHTML);
+        let rowHTML = new Tag('tr');
+        for (let header of headers) {
+            let tdHTML = new Tag('td');
+            if (row[header] !== undefined) {
+                tdHTML.contents.push(row[header]);
+            } else {
+                tdHTML.contents.push('');
+            }
+            rowHTML.contents.push(tdHTML);
         }
 
         bodyHTML.contents.push(rowHTML);
